@@ -27,7 +27,7 @@ class Walk():
             visible += 1
             if tree >=height:
                 break
-        internal_visibility[(y*len(trees[0]))+x] = visible * internal_visibility[(y*len(trees[0]))+x]
+        internal_visibility[(y*len(trees[0]))+x] *= visible
         if height==9:
             self.trees_to_see = [9]
         else:
