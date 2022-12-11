@@ -13,8 +13,7 @@ visited = [ {tuple(rope[x])} for x in range(len(rope)) ]
 def move_rope(move_vector, rope, visited):
     rope[0]+=move_vector
     for i in range(len(rope)-1):
-        distance = np.linalg.norm(rope[i]-rope[i+1])
-        if distance > 1.75:
+        if np.linalg.norm(rope[i]-rope[i+1]) > 1.75:
             rope[i+1]+=np.array(np.clip(rope[i]-rope[i+1], -1, 1), dtype=np.int32)
         visited[i+1].add(tuple(rope[i+1]))
 
